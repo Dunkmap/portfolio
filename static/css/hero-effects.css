@@ -1,10 +1,10 @@
-/* Elegant Hero Section Intro/Outro Effects - NO LAPTOP CHANGES */
+/* Elegant Hero Section Intro/Outro Effects - SMOOTH & SLOW */
 
 /* Fade in animations for text */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(60px);
     }
 
     to {
@@ -16,7 +16,7 @@
 @keyframes fadeInLeft {
     from {
         opacity: 0;
-        transform: translateX(-40px);
+        transform: translateX(-60px);
     }
 
     to {
@@ -28,7 +28,7 @@
 @keyframes fadeInDown {
     from {
         opacity: 0;
-        transform: translateY(-40px);
+        transform: translateY(-60px);
     }
 
     to {
@@ -37,7 +37,7 @@
     }
 }
 
-/* Gradient text shimmer effect */
+/* Gradient text shimmer effect - SLOWER */
 @keyframes gradientShimmer {
     0% {
         background-position: 0% 50%;
@@ -52,51 +52,30 @@
     }
 }
 
-/* Glowing pulse effect */
-@keyframes glowPulse {
-
-    0%,
-    100% {
-        text-shadow:
-            0 0 10px rgba(168, 139, 250, 0.5),
-            0 0 20px rgba(168, 139, 250, 0.3),
-            0 0 30px rgba(168, 139, 250, 0.2);
-    }
-
-    50% {
-        text-shadow:
-            0 0 20px rgba(168, 139, 250, 0.8),
-            0 0 30px rgba(168, 139, 250, 0.5),
-            0 0 40px rgba(168, 139, 250, 0.3),
-            0 0 50px rgba(168, 139, 250, 0.2);
-    }
-}
-
-/* Apply intro animations to hero text */
+/* Apply intro animations to hero text - SMOOTH & SLOW */
 .hero-section h1 {
-    animation: fadeInDown 1s ease-out 0.3s both;
+    animation: fadeInDown 2.5s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
 }
 
 .hero-section h1 span {
     background-size: 200% 200%;
     animation:
-        fadeInLeft 1s ease-out 0.6s both,
-        gradientShimmer 4s ease infinite 2s,
-        ;
+        fadeInLeft 3s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both,
+        gradientShimmer 8s ease infinite 4s;
 }
 
 .hero-section p {
-    animation: fadeInUp 1s ease-out 0.9s both;
+    animation: fadeInUp 2.5s cubic-bezier(0.16, 1, 0.3, 1) 2s both;
 }
 
 /* Navigation fade in */
 nav {
-    animation: fadeInDown 0.8s ease-out 0.2s both;
+    animation: fadeInDown 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
 }
 
 /* Star cluster smooth fade in */
 #star-cluster {
-    animation: fadeIn 2s ease-out both;
+    animation: fadeIn 3s ease-out both;
 }
 
 @keyframes fadeIn {
@@ -127,130 +106,5 @@ nav {
 header {
     background: linear-gradient(-45deg, #0a1628, #0d1d35, #1a2847, #0a1628) !important;
     background-size: 400% 400% !important;
-    animation: gradientFlow 15s ease infinite !important;
-}
-
-/* Pulsing gradient orbs */
-@keyframes orbPulse {
-
-    0%,
-    100% {
-        opacity: 0.2;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 0.4;
-        transform: scale(1.1);
-    }
-}
-
-.gradient-orb {
-    animation: orbPulse 4s ease-in-out infinite;
-}
-
-.gradient-orb:nth-child(2) {
-    animation-delay: 2s;
-}
-
-/* Floating animation for decorative elements */
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-/* Apply to star decoration */
-header svg {
-    animation: float 6s ease-in-out infinite;
-}
-
-/* Smooth scroll indicator (if you want to add one) */
-@keyframes bounce {
-
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateY(0);
-    }
-
-    40% {
-        transform: translateY(-10px);
-    }
-
-    60% {
-        transform: translateY(-5px);
-    }
-}
-
-/* Letter by letter reveal effect for title */
-@keyframes letterReveal {
-    from {
-        opacity: 0;
-        transform: translateY(20px) rotateX(-90deg);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) rotateX(0deg);
-    }
-}
-
-/* Typing cursor effect */
-@keyframes blink {
-
-    0%,
-    50% {
-        opacity: 1;
-    }
-
-    51%,
-    100% {
-        opacity: 0;
-    }
-}
-
-/* Add subtle parallax effect on mouse move (via JS) */
-.hero-content {
-    transition: transform 0.3s ease-out;
-}
-
-/* Responsive animations */
-@media (max-width: 768px) {
-
-    .hero-section h1,
-    .hero-section h1 span,
-    .hero-section p {
-        animation-duration: 0.8s;
-    }
-}
-
-/* Ensure animations don't affect laptop */
-.laptop-3d-container,
-.laptop-3d,
-.laptop-3d * {
-    animation: none !important;
-}
-/* Smooth scroll transitions for outro/intro */
-.hero-section h1,
-.hero-section h1 span,
-.hero-section p {
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-nav {
-  transition: opacity 0.6s ease-out;
-}
-
-header {
-  transition: transform 0.6s ease-out;
-  transform-origin: center top;
+    animation: gradientFlow 15s ease infinite;
 }

@@ -1,11 +1,11 @@
-/* Cool Animated Effect for PROJECT TIMELINE */
+/* Simple Clean Effect for PROJECT TIMELINE */
 
-/* Word-by-word appear animation */
+/* Word-by-word appear animation - CLEAN */
 .word-animate {
     display: inline-block;
     opacity: 0;
-    transform: translateY(50px) rotateX(-90deg) scale(0.5);
-    animation: wordAppear 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform: translateY(30px) scale(0.9);
+    animation: wordAppear 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .word-animate:nth-child(1) {
@@ -19,186 +19,26 @@
 @keyframes wordAppear {
     0% {
         opacity: 0;
-        transform: translateY(50px) rotateX(-90deg) scale(0.5);
-        filter: blur(10px);
-    }
-
-    50% {
-        transform: translateY(-10px) rotateX(0deg) scale(1.1);
+        transform: translateY(30px) scale(0.9);
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0) rotateX(0deg) scale(1);
-        filter: blur(0);
+        transform: translateY(0) scale(1);
     }
 }
 
-/* Glitch + Neon Animation */
-@keyframes glitchText {
-
-    0%,
-    100% {
-        transform: translate(0);
-        text-shadow:
-            0 0 10px rgba(255, 255, 255, 0.8),
-            0 0 20px rgba(255, 255, 255, 0.6),
-            0 0 30px rgba(255, 255, 255, 0.4),
-            4px 4px 0px rgba(0, 0, 0, 1);
-    }
-
-    20% {
-        transform: translate(-2px, 2px);
-        text-shadow:
-            -2px 0 10px rgba(255, 97, 166, 0.8),
-            2px 0 10px rgba(118, 247, 111, 0.8),
-            0 0 20px rgba(255, 255, 255, 0.6),
-            4px 4px 0px rgba(0, 0, 0, 1);
-    }
-
-    40% {
-        transform: translate(2px, -2px);
-        text-shadow:
-            2px 0 10px rgba(250, 239, 93, 0.8),
-            -2px 0 10px rgba(167, 139, 250, 0.8),
-            0 0 20px rgba(255, 255, 255, 0.6),
-            4px 4px 0px rgba(0, 0, 0, 1);
-    }
-
-    60% {
-        transform: translate(-1px, -1px);
-        text-shadow:
-            0 0 10px rgba(255, 255, 255, 0.8),
-            0 0 20px rgba(255, 255, 255, 0.6),
-            0 0 30px rgba(255, 255, 255, 0.4),
-            4px 4px 0px rgba(0, 0, 0, 1);
-    }
-
-    80% {
-        transform: translate(1px, 1px);
-        text-shadow:
-            -1px 0 10px rgba(255, 97, 166, 0.8),
-            1px 0 10px rgba(118, 247, 111, 0.8),
-            0 0 20px rgba(255, 255, 255, 0.6),
-            4px 4px 0px rgba(0, 0, 0, 1);
-    }
-}
-
-/* Pulse glow effect */
-@keyframes pulseGlow {
-
-    0%,
-    100% {
-        filter: brightness(1) contrast(1);
-    }
-
-    50% {
-        filter: brightness(1.2) contrast(1.1);
-    }
-}
-
-/* Floating animation */
-@keyframes floatTitle {
-
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-/* Apply animations to PROJECT TIMELINE - after words appear */
-#project-title {
-    animation-delay: 1.2s;
-    animation-fill-mode: forwards;
-}
-
+/* Simple fade in - no colors, no glitch */
 #project-title.animated {
-    animation:
-        glitchText 4s ease-in-out infinite,
-        pulseGlow 3s ease-in-out infinite,
-        floatTitle 6s ease-in-out infinite;
-    position: relative;
-    display: inline-block;
-    transition: all 0.3s ease;
+    animation: simpleFadeIn 0.5s ease forwards;
 }
 
-/* Hover effect - intensify */
-#project-title.animated:hover {
-    animation:
-        glitchText 0.5s ease-in-out infinite,
-        pulseGlow 1s ease-in-out infinite;
-    transform: scale(1.05);
-    cursor: default;
-}
-
-/* Add scanline effect */
-#project-title.animated::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(transparent 0%,
-            rgba(255, 255, 255, 0.1) 50%,
-            transparent 100%);
-    animation: scanline 3s linear infinite;
-    pointer-events: none;
-}
-
-@keyframes scanline {
-    0% {
-        transform: translateY(-100%);
+@keyframes simpleFadeIn {
+    from {
+        opacity: 0.8;
     }
 
-    100% {
-        transform: translateY(100%);
-    }
-}
-
-/* RGB split effect on hover */
-#project-title.animated::after {
-    content: 'PROJECT TIMELINE';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    mix-blend-mode: screen;
-    animation: rgbSplit 0.3s ease-in-out infinite;
-    pointer-events: none;
-}
-
-#project-title.animated:hover::after {
-    opacity: 0.3;
-}
-
-@keyframes rgbSplit {
-
-    0%,
-    100% {
-        text-shadow:
-            -2px 0 0 rgba(255, 0, 0, 0.5),
-            2px 0 0 rgba(0, 255, 255, 0.5);
-    }
-
-    50% {
-        text-shadow:
-            2px 0 0 rgba(255, 0, 0, 0.5),
-            -2px 0 0 rgba(0, 255, 255, 0.5);
-    }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    #project-title.animated {
-        animation:
-            pulseGlow 3s ease-in-out infinite,
-            floatTitle 6s ease-in-out infinite;
+    to {
+        opacity: 1;
     }
 }
