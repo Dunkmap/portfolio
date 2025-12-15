@@ -1,0 +1,91 @@
+/* Minimalistic iPhone Notch Navigation Bar */
+
+.nav-notch {
+    animation: notchFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes notchFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Hide notch when scrolled past first page */
+.nav-notch.hidden {
+    opacity: 0;
+    transform: translateY(-100px);
+    pointer-events: none;
+}
+
+/* Minimalistic hover effect */
+.nav-notch:hover {
+    background: rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Nav link minimal effects */
+.nav-link {
+    position: relative;
+    padding: 0.25rem 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* Subtle glow - more minimalistic */
+.nav-notch::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(90deg,
+            rgba(6, 182, 212, 0.1),
+            rgba(168, 85, 247, 0.1),
+            rgba(16, 185, 129, 0.1),
+            rgba(251, 146, 60, 0.1));
+    border-radius: 9999px;
+    opacity: 0;
+    filter: blur(8px);
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.nav-notch:hover::before {
+    opacity: 1;
+}
+
+/* Responsive notch */
+@media (max-width: 768px) {
+    .nav-notch {
+        padding: 0.5rem 1.25rem;
+    }
+
+    .nav-notch .flex {
+        gap: 0.75rem;
+        font-size: 0.75rem;
+    }
+
+    .nav-notch .absolute.top-0 {
+        width: 60px;
+        height: 16px;
+    }
+}

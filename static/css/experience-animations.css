@@ -1,0 +1,209 @@
+/* Experience Cards Animations */
+
+/* Initial state - hidden */
+.experience-card {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Visible state - when scrolled into view */
+.experience-card.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Stagger animation for second card */
+.experience-card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+/* Enhanced hover effects */
+.experience-card {
+    position: relative;
+    overflow: hidden;
+    /* Ensure equal height */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.experience-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* 3D tilt effect on hover - SMOOTHED */
+.experience-card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.experience-card:hover .card-content {
+    transform: translateZ(20px);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Card content fills height */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Animated gradient background on hover */
+.experience-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(168, 85, 247, 0.05));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+.experience-card:hover::before {
+    opacity: 1;
+}
+
+/* Icon FLIP on hover */
+.card-icon {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-style: preserve-3d;
+}
+
+.experience-card:hover .card-icon {
+    transform: rotateY(360deg) scale(1.1);
+}
+
+/* Keep icon content upright during flip */
+.card-icon iconify-icon {
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.experience-card:hover .card-icon iconify-icon {
+    transform: rotateY(-360deg);
+}
+
+/* Skill tags slide in on hover */
+.experience-card .skill-tag {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(0);
+}
+
+.experience-card:hover .skill-tag {
+    transform: translateY(-3px);
+}
+
+.experience-card:hover .skill-tag:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.experience-card:hover .skill-tag:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.experience-card:hover .skill-tag:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.experience-card:hover .skill-tag:nth-child(4) {
+    transition-delay: 0.2s;
+}
+
+/* Responsibility items fade in on scroll */
+.responsibility-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.experience-card.visible .responsibility-item {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.experience-card.visible .responsibility-item:nth-child(1) {
+    transition-delay: 0.3s;
+}
+
+.experience-card.visible .responsibility-item:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.experience-card.visible .responsibility-item:nth-child(3) {
+    transition-delay: 0.5s;
+}
+
+/* Check icon pulse on hover */
+.responsibility-item:hover iconify-icon {
+    animation: checkPulse 0.5s ease;
+}
+
+@keyframes checkPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+}
+
+/* Decorative gradient orb animation */
+.decorative-orb {
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.experience-card:hover .decorative-orb {
+    transform: scale(2) rotate(180deg);
+    opacity: 0.8;
+}
+
+/* Smooth card content transitions */
+.card-content {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-style: preserve-3d;
+}
+
+/* Role title color transition */
+.card-title {
+    transition: all 0.3s ease;
+}
+
+/* Company name underline effect */
+.company-name {
+    position: relative;
+    display: inline-block;
+}
+
+.company-name::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    transition: width 0.3s ease;
+}
+
+.experience-card:hover .company-name::after {
+    width: 100%;
+}
+
+/* Equal height grid container */
+#experience .grid {
+    align-items: stretch;
+}
+
+#experience .grid>div {
+    display: flex;
+}

@@ -77,7 +77,7 @@ PROJECTS = [
             "Used Pandas for structured analysis.",
             "Generated insight-driven plots."
         ],
-        "link": ""
+        "link": "https://github.com/Dunkmap/Data-Analyst-practice/blob/main/RED_WINE_DATA.ipynb"
     },
     {
         "title": "Credit Card Fraud Detection",
@@ -91,6 +91,19 @@ PROJECTS = [
             "Applied analytics for risk detection."
         ],
         "link": "https://github.com/Dunkmap/Fraud-detection-Using-M.L.git"
+    },
+    {
+        "title": "Customer Segmentation Analysis",
+        "img": "img/projects/customer-segmentation.jpg",
+        "tags": "Python • Clustering • Machine Learning",
+        "desc": [
+            "Performed customer segmentation using K-means clustering.",
+            "Analyzed purchasing patterns and customer behavior.",
+            "Created targeted marketing strategies based on segments.",
+            "Visualized clusters with interactive plots.",
+            "Improved customer retention insights."
+        ],
+        "link": "#"
     }
 ]
 

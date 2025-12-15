@@ -26,22 +26,77 @@
     }
   </script>
 
-  <!-- Three.js 3D Laptop Scene -->
-  <script type="module" src="/static/js/laptop-3d.js"></script>
-
   <!-- 3D Laptop CSS -->
   <link rel="stylesheet" href="/static/css/laptop-3d.css">
+
+  <!-- Hero Section Effects -->
+  <link rel="stylesheet" href="/static/css/hero-effects.css">
+
+  <!-- Navigation Notch Style -->
+  <link rel="stylesheet" href="/static/css/nav-notch.css">
+
+  <!-- Project Title Effects -->
+  <link rel="stylesheet" href="/static/css/project-title-effects.css">
+
+  <!-- 3D Laptop Interactive Controller -->
+  <script src="/static/js/laptop-controller.js"></script>
+
+  <!-- Skills 3D Pop-out Effect -->
+  <script src="/static/js/skills-popout.js"></script>
+
+  <!-- Animated Star Cluster Background -->
+  <script src="/static/js/star-cluster.js"></script>
+
+  <!-- Word Animation CSS -->
+  <link rel="stylesheet" href="/static/css/word-animation.css">
+
+  <!-- Word Animation JS -->
+  <script src="/static/js/word-animation.js"></script>
+
+  <!-- Experience Animations CSS -->
+  <link rel="stylesheet" href="/static/css/experience-animations.css">
+
+  <!-- Experience Animations JS -->
+  <script src="/static/js/experience-animations.js"></script>
+
+  <!-- Notch Controller -->
+  <script src="/static/js/notch-controller.js"></script>
+
+
+
+  <!-- Laptop Screen Infinite Scroll & 3D Effects -->
+  <script src="/static/js/laptop-screen-scroll.js"></script>
+
+  <!-- Project Timeline Auto Scroll -->
+  <script src="/static/js/project-auto-scroll.js"></script>
+
+  <!-- Project Title Animation -->
+  <script src="/static/js/project-title-animation.js"></script>
+
+
 </head>
 
 <body class="antialiased font-sans">
 
-  <!-- Navigation -->
-  <nav class="fixed top-0 w-full z-50 px-6 py-6 md:px-12 flex justify-end items-center">
-    <div class="flex gap-8 text-sm font-medium tracking-wide text-white">
-      <a href="#about" class="hover:text-gray-300 transition-colors">About</a>
-      <a href="#skills" class="hover:text-gray-300 transition-colors">Skills</a>
-      <a href="#projects" class="hover:text-gray-300 transition-colors">Projects</a>
-      <a href="#contact" class="hover:text-gray-300 transition-colors">Contact me</a>
+  <!-- Navigation - iPhone Notch Style -->
+  <nav class="fixed top-0 w-full z-50 flex justify-center pt-3">
+    <div
+      class="nav-notch relative bg-black/30 backdrop-blur-md border border-white/5 rounded-full px-6 py-2.5 shadow-xl">
+      <!-- Notch cutout effect -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-4 bg-black rounded-b-2xl"></div>
+
+      <!-- Navigation links -->
+      <div class="flex gap-6 text-xs font-medium tracking-wide relative z-10">
+        <a href="#about"
+          class="nav-link text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 transition-all duration-300">About</a>
+        <a href="#projects"
+          class="nav-link text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 hover:from-purple-300 hover:to-pink-400 transition-all duration-300">Projects</a>
+        <a href="#experience"
+          class="nav-link text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 transition-all duration-300">Experience</a>
+        <a href="#contact"
+          class="nav-link text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-rose-500 hover:from-orange-300 hover:to-rose-400 transition-all duration-300">Contact
+          me</a>
+      </div>
     </div>
   </nav>
 
@@ -64,59 +119,221 @@
     <div class="max-w-screen-2xl w-full mx-auto relative z-20">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <!-- Left Content -->
-        <div class="text-white space-y-8">
-          <h1 class="font-display font-bold text-5xl md:text-6xl xl:text-7xl leading-[1.1] tracking-tight">
+        <div class="hero-section text-white space-y-8">
+          <h1 class="hero-title font-display font-bold text-5xl md:text-6xl xl:text-7xl leading-[1.1] tracking-tight">
             Data Analyst<br>
-            <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Divya
+            <span
+              class="hero-name bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Divya
               Raj</span>
           </h1>
-          <p class="text-base md:text-lg text-gray-300 leading-relaxed max-w-xl">
+          <p class="hero-description text-base md:text-lg text-gray-300 leading-relaxed max-w-xl">
             Analyst with expertise in Python, SQL, Power BI, Excel, AWS, and Snowflake. Skilled in data cleaning,
-            visualization, statistical analysis, ETL pipeline design, and dashboard/report building. Manju excels at
-            translating complex technical work into clear, recruiter-friendly insights.
+            visualization, statistical analysis, ETL pipeline design, and dashboard/report building.
           </p>
         </div>
 
-        <!-- Right 3D Laptop Scene -->
+        <!-- Right 3D Laptop Model -->
         <div class="relative flex items-center justify-center lg:justify-end">
-          <div class="laptop-3d-scene">
-            <div class="laptop-container">
+          <div class="laptop-3d-container">
+            <div class="laptop-3d">
               <!-- Laptop Base -->
               <div class="laptop-base"></div>
-              <div class="laptop-keyboard"></div>
 
-              <!-- Laptop Screen -->
+              <!-- Keyboard with keys -->
+              <div class="laptop-keyboard">
+                <!-- Generate 90 keyboard keys -->
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+                <div class="key"></div>
+              </div>
+
+              <!-- Trackpad -->
+              <div class="laptop-trackpad"></div>
+
+              <!-- Screen Back -->
               <div class="laptop-screen-back"></div>
+
+              <!-- Screen Display -->
               <div class="laptop-screen">
                 <div class="screen-content">
                   <div class="screen-grid"></div>
 
-                  <!-- Line Chart on Screen -->
-                  <svg class="screen-chart" viewBox="0 0 120 80">
-                    <polyline class="chart-line" points="0,60 20,45 40,50 60,30 80,35 100,20 120,25"
-                      stroke-dasharray="5,5" />
-                  </svg>
+                  <!-- Skills Header -->
+                  <div class="skills-header">
+                    <h3>DATA ANALYST SKILLS</h3>
+                  </div>
 
-                  <!-- Area Chart on Screen -->
-                  <svg class="screen-area" viewBox="0 0 100 60">
-                    <defs>
-                      <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:0.8" />
-                        <stop offset="100%" style="stop-color:#a78bfa;stop-opacity:0.1" />
-                      </linearGradient>
-                    </defs>
-                    <polygon class="area-chart" points="0,60 0,40 20,35 40,45 60,30 80,35 100,25 100,60" />
-                  </svg>
+                  <!-- Skills Grid -->
+                  <div class="skills-grid">
+                    <!-- Skill 1: Python -->
+                    <div class="skill-item">
+                      <div class="skill-icon">🐍</div>
+                      <div class="skill-name">Python</div>
+                      <div class="skill-bar">
+                        <div class="skill-fill" style="width: 90%; animation-delay: 0s;"></div>
+                      </div>
+                    </div>
+
+                    <!-- Skill 2: SQL -->
+                    <div class="skill-item">
+                      <div class="skill-icon">🗄️</div>
+                      <div class="skill-name">SQL</div>
+                      <div class="skill-bar">
+                        <div class="skill-fill" style="width: 95%; animation-delay: 0.1s;"></div>
+                      </div>
+                    </div>
+
+                    <!-- Skill 3: Power BI -->
+                    <div class="skill-item">
+                      <div class="skill-icon">📊</div>
+                      <div class="skill-name">Power BI</div>
+                      <div class="skill-bar">
+                        <div class="skill-fill" style="width: 88%; animation-delay: 0.2s;"></div>
+                      </div>
+                    </div>
+
+                    <!-- Skill 4: Excel -->
+                    <div class="skill-item">
+                      <div class="skill-icon">📈</div>
+                      <div class="skill-name">Excel</div>
+                      <div class="skill-bar">
+                        <div class="skill-fill" style="width: 92%; animation-delay: 0.3s;"></div>
+                      </div>
+                    </div>
+
+                    <!-- Skill 5: AWS -->
+                    <div class="skill-item">
+                      <div class="skill-icon">☁️</div>
+                      <div class="skill-name">AWS</div>
+                      <div class="skill-bar">
+                        <div class="skill-fill" style="width: 75%; animation-delay: 0.4s;"></div>
+                      </div>
+                    </div>
+
+                    <!-- Skill 6: Snowflake -->
+                    <div class="skill-item">
+                      <div class="skill-icon">❄️</div>
+                      <div class="skill-name">Snowflake</div>
+                      <div class="skill-bar">
+                        <div class="skill-fill" style="width: 80%; animation-delay: 0.5s;"></div>
+                      </div>
+                    </div>
+
+                    <!-- Skill 7: Machine Learning -->
+                    <div class="skill-item">
+                      <div class="skill-icon">🤖</div>
+                      <div class="skill-name">Machine Learning</div>
+                      <div class="skill-bar">
+                        <div class="skill-fill" style="width: 70%; animation-delay: 0.6s;"></div>
+                      </div>
+                    </div>
+
+                    <!-- Skill 8: Tableau -->
+                    <div class="skill-item">
+                      <div class="skill-icon">📉</div>
+                      <div class="skill-name">Tableau</div>
+                      <div class="skill-bar">
+                        <div class="skill-fill" style="width: 85%; animation-delay: 0.7s;"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <!-- Floating Donut Chart -->
-              <div class="floating-element donut-chart">
+              <div class="floating-chart donut-chart">
                 <div class="donut"></div>
               </div>
 
               <!-- Floating Bar Chart -->
-              <div class="floating-element bar-chart">
+              <div class="floating-chart bar-chart">
                 <div class="bars">
                   <div class="bar"></div>
                   <div class="bar"></div>
@@ -124,19 +341,9 @@
                 </div>
               </div>
 
-              <!-- Floating Data Card -->
-              <div class="floating-element data-card">
-                <div class="card">
-                  <div class="card-icon"></div>
-                  <div class="card-line"></div>
-                  <div class="card-line"></div>
-                  <div class="card-line"></div>
-                </div>
-              </div>
-
               <!-- Floating List -->
-              <div class="floating-element list-element">
-                <div class="list">
+              <div class="floating-chart list-element">
+                <div class="list-box">
                   <div class="list-item">
                     <div class="list-dot"></div>
                     <div class="list-line"></div>
@@ -150,11 +357,6 @@
                     <div class="list-line"></div>
                   </div>
                 </div>
-              </div>
-
-              <!-- Floating Sphere -->
-              <div class="floating-element sphere-element">
-                <div class="sphere"></div>
               </div>
             </div>
           </div>
@@ -162,6 +364,7 @@
       </div>
     </div>
   </header>
+
 
   <!-- About Section -->
   <section id="about" class="py-32 px-6 md:px-12 bg-white">
@@ -171,10 +374,19 @@
           <h2 class="text-xs font-bold tracking-[0.2em] uppercase text-slate-400 mb-4 sticky top-32">About</h2>
         </div>
         <div class="md:col-span-8">
-          <p class="text-3xl md:text-5xl font-display font-medium leading-tight tracking-tight text-slate-900 mb-12">
-            I build systems that listen to data. By combining statistical rigor with design-thinking, I transform
-            complex datasets into clear, narrative-driven business intelligence.
-          </p>
+          <div
+            class="animated-text text-3xl md:text-5xl font-display font-medium leading-tight tracking-tight text-slate-900 mb-12">
+            <p class="mb-8">
+              I'm Divya Raj, a Data Analyst with a strong interest in transforming raw data into meaningful insights and
+              interactive dashboards. I work across the data lifecycle — from cleaning and analyzing datasets to
+              visualizing results that support business decisions.
+            </p>
+
+            <p>
+              I enjoy solving real-world problems with data and continuously improving my analytical and technical
+              skills to build impactful, insight-driven solutions.
+            </p>
+          </div>
 
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 border-t border-slate-100">
             <div
@@ -214,39 +426,45 @@
   </section>
 
   <!-- Project Timeline -->
-  <section id="projects" class="py-32 px-4 md:px-12 bg-[#5B86E5] relative overflow-hidden font-display">
+  <section id="projects" class="py-32 px-4 md:px-12 bg-[#6495ED] relative overflow-hidden font-display">
     <div class="absolute inset-0 opacity-10 pointer-events-none"
       style="background-image: radial-gradient(#fff 2px, transparent 2px); background-size: 30px 30px;">
     </div>
 
     <div class="max-w-screen-xl mx-auto relative z-10">
       <div class="text-center mb-24">
-        <h2
+        <h2 id="project-title"
           class="text-5xl md:text-7xl font-extrabold tracking-wider text-white select-none drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]"
           style="-webkit-text-stroke: 2px black;">
-          PROJECT<br>TIMELINE
+          <span class="word-animate">PROJECT</span><br><span class="word-animate">TIMELINE</span>
         </h2>
       </div>
 
-      <div class="relative">
+      <!-- Fixed Height Scrollable Timeline Container -->
+      <div class="timeline-scroll-container relative overflow-hidden rounded-3xl"
+        style="height: 800px; background: linear-gradient(180deg, rgba(91,134,229,0.3) 0%, rgba(91,134,229,0.1) 50%, rgba(91,134,229,0.3) 100%);">
+
+        <!-- Top Fade Mask - Magic Vanish -->
+        <div class="absolute top-0 left-0 right-0 h-32 pointer-events-none z-30"
+          style="background: linear-gradient(to bottom, #6495ED 0%, transparent 100%);"></div>
+
+        <!-- Bottom Fade Mask - Magic Vanish -->
+        <div class="absolute bottom-0 left-0 right-0 h-32 pointer-events-none z-30"
+          style="background: linear-gradient(to top, #6495ED 0%, transparent 100%);"></div>
         <!-- Central Timeline Line -->
         <div
           class="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-3 bg-white border-2 border-black rounded-full hidden md:block">
         </div>
 
-        <div class="space-y-32">
+        <div class="space-y-32 timeline-projects" style="padding: 2rem 0;">
           {% for p in projects %}
           <!-- Project Item -->
           <div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center group w-full">
 
-            <!-- Timeline Dot with Number -->
-            <div class="absolute left-1/2 transform -translate-x-1/2 z-20 hidden md:flex items-center gap-4">
-              <!-- Yellow Dot -->
-              <div
-                class="w-8 h-8 bg-yellow-400 border-4 border-black rounded-full group-hover:scale-125 transition-transform shadow-[2px_2px_0px_rgba(0,0,0,1)]">
-              </div>
-
-              <!-- Number Circle -->
+            <!-- Timeline Dot with Number - Positioned on opposite side of card -->
+            <div
+              class="absolute left-1/2 transform -translate-x-1/2 z-20 hidden md:flex items-center {{ 'flex-row-reverse' if loop.index % 2 == 0 else '' }}">
+              <!-- Number Circle - on opposite side -->
               {% set colors = ['bg-[#FAEF5D]', 'bg-[#FF61A6]', 'bg-[#76F76F]', 'bg-[#A78BFA]'] %}
               {% set color = colors[(loop.index0) % 4] %}
 
@@ -255,6 +473,11 @@
                 <span class="text-3xl font-black text-black" style="-webkit-text-stroke: 2px black;">
                   {{ '%02d' % loop.index }}
                 </span>
+              </div>
+
+              <!-- Yellow Dot - closer to number -->
+              <div
+                class="w-8 h-8 bg-yellow-400 border-4 border-black rounded-full group-hover:scale-125 transition-transform shadow-[2px_2px_0px_rgba(0,0,0,1)] {{ '-ml-2' if loop.index % 2 != 0 else '-mr-2' }}">
               </div>
             </div>
 
@@ -291,6 +514,132 @@
     </div>
   </section>
 
+  <!-- Experience Section -->
+  <section id="experience" class="py-32 px-6 md:px-12 bg-gradient-to-br from-slate-50 to-white relative">
+    <div class="max-w-screen-xl mx-auto">
+      <!-- EXPERIENCE label in top right -->
+      <div class="absolute top-8 right-8 md:top-12 md:right-12">
+        <h2 class="text-xs font-bold tracking-[0.2em] uppercase text-slate-400">Experience</h2>
+      </div>
+
+      <!-- Centered header -->
+      <div class="text-center mb-16">
+        <h3 class="text-4xl md:text-6xl font-display font-bold tracking-tight text-slate-900 mb-6">
+          Professional Journey
+        </h3>
+        <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
+          Hands-on experience transforming data into actionable insights across different industries.
+        </p>
+      </div>
+
+      <!-- Experience Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Experience Card 1 -->
+        <div
+          class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 hover:border-indigo-200 overflow-hidden">
+          <!-- Decorative gradient -->
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500">
+          </div>
+
+          <div class="relative z-10">
+            <!-- Company Icon -->
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <iconify-icon icon="lucide:briefcase" class="text-3xl text-white"></iconify-icon>
+            </div>
+
+            <!-- Role & Company -->
+            <h4 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">
+              Data Analyst Intern
+            </h4>
+            <p class="text-lg font-semibold text-indigo-600 mb-1">TRACIDA (Remote)</p>
+            <p class="text-sm text-slate-500 mb-6">Duration: May 2024 – Aug 2024</p>
+
+            <!-- Responsibilities -->
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start">
+                <iconify-icon icon="lucide:check-circle" class="text-indigo-500 mt-1 mr-3 flex-shrink-0"></iconify-icon>
+                <span class="text-slate-700">Automated reports and interactive dashboards to support data-driven
+                  decision-making</span>
+              </li>
+              <li class="flex items-start">
+                <iconify-icon icon="lucide:check-circle" class="text-indigo-500 mt-1 mr-3 flex-shrink-0"></iconify-icon>
+                <span class="text-slate-700">Cleaned, structured, and maintained large Excel datasets to ensure accuracy
+                  and consistency</span>
+              </li>
+              <li class="flex items-start">
+                <iconify-icon icon="lucide:check-circle" class="text-indigo-500 mt-1 mr-3 flex-shrink-0"></iconify-icon>
+                <span class="text-slate-700">Collaborated with cross-functional teams to analyze KPIs and deliver
+                  client-ready analytical reports</span>
+              </li>
+            </ul>
+
+            <!-- Skills Tags -->
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-semibold rounded-full">Power BI</span>
+              <span class="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-semibold rounded-full">Excel</span>
+              <span class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full">Data Analysis</span>
+              <span class="px-3 py-1 bg-pink-50 text-pink-700 text-xs font-semibold rounded-full">Reporting</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Card 2 - Placeholder for second experience -->
+        <div
+          class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 hover:border-emerald-200 overflow-hidden">
+          <!-- Decorative gradient -->
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500">
+          </div>
+
+          <div class="relative z-10">
+            <!-- Company Icon -->
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <iconify-icon icon="lucide:code-2" class="text-3xl text-white"></iconify-icon>
+            </div>
+
+            <!-- Role & Company -->
+            <h4 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors">
+              [Your Role]
+            </h4>
+            <p class="text-lg font-semibold text-emerald-600 mb-1">[Company Name]</p>
+            <p class="text-sm text-slate-500 mb-6">Duration: [Add dates]</p>
+
+            <!-- Responsibilities -->
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start">
+                <iconify-icon icon="lucide:check-circle"
+                  class="text-emerald-500 mt-1 mr-3 flex-shrink-0"></iconify-icon>
+                <span class="text-slate-700">[Add your responsibility here]</span>
+              </li>
+              <li class="flex items-start">
+                <iconify-icon icon="lucide:check-circle"
+                  class="text-emerald-500 mt-1 mr-3 flex-shrink-0"></iconify-icon>
+                <span class="text-slate-700">[Add your responsibility here]</span>
+              </li>
+              <li class="flex items-start">
+                <iconify-icon icon="lucide:check-circle"
+                  class="text-emerald-500 mt-1 mr-3 flex-shrink-0"></iconify-icon>
+                <span class="text-slate-700">[Add your responsibility here]</span>
+              </li>
+            </ul>
+
+            <!-- Skills Tags -->
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full">Python</span>
+              <span class="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-semibold rounded-full">SQL</span>
+              <span class="px-3 py-1 bg-cyan-50 text-cyan-700 text-xs font-semibold rounded-full">Data Viz</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer id="contact" class="bg-slate-900 text-white px-6 md:px-12 pt-32 pb-12">
     <div class="max-w-screen-xl mx-auto">
@@ -313,11 +662,11 @@
             </div>
           </a>
           <div class="flex gap-8 mt-12">
-            <a href="#"
+            <a href="https://www.linkedin.com/in/divya-raj-91136726b/" target="_blank"
               class="text-xs uppercase tracking-widest text-slate-500 hover:text-white transition-colors">LinkedIn</a>
-            <a href="#"
+            <a href="https://github.com/Dunkmap/Fraud-detection-Using-M.L.git" target="_blank"
               class="text-xs uppercase tracking-widest text-slate-500 hover:text-white transition-colors">GitHub</a>
-            <a href="/resume"
+            <a href="Divya Data Analyst Resume.pdf" target="_blank"
               class="text-xs uppercase tracking-widest text-slate-500 hover:text-white transition-colors">Resume</a>
           </div>
         </div>
