@@ -1,0 +1,454 @@
+/* 3D Laptop Scene - Pure CSS */
+.laptop-3d-scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  perspective-origin: center center;
+}
+
+.laptop-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  transform-style: preserve-3d;
+  animation: floatLaptop 6s ease-in-out infinite;
+}
+
+@keyframes floatLaptop {
+  0%, 100% {
+    transform: translateY(0px) rotateX(-15deg) rotateY(25deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateX(-15deg) rotateY(25deg);
+  }
+}
+
+/* Laptop Base */
+.laptop-base {
+  position: absolute;
+  width: 320px;
+  height: 220px;
+  background: linear-gradient(135deg, #6eb5ff 0%, #5a9fd4 100%);
+  border-radius: 8px;
+  transform: rotateX(90deg) translateZ(-10px);
+  box-shadow: 
+    0 0 20px rgba(110, 181, 255, 0.3),
+    inset 0 2px 10px rgba(255, 255, 255, 0.2);
+  bottom: 0;
+  left: 50%;
+  margin-left: -160px;
+}
+
+/* Keyboard Area */
+.laptop-keyboard {
+  position: absolute;
+  width: 280px;
+  height: 180px;
+  background: linear-gradient(135deg, #4a5f8f 0%, #3d4d73 100%);
+  border-radius: 4px;
+  transform: rotateX(90deg) translateZ(-8px);
+  bottom: 0;
+  left: 50%;
+  margin-left: -140px;
+  box-shadow: inset 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Laptop Screen Back */
+.laptop-screen-back {
+  position: absolute;
+  width: 320px;
+  height: 200px;
+  background: linear-gradient(135deg, #6eb5ff 0%, #5a9fd4 100%);
+  border-radius: 8px;
+  transform: translateZ(100px) translateY(-100px);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(110, 181, 255, 0.2);
+  left: 50%;
+  margin-left: -160px;
+  bottom: 10px;
+}
+
+/* Laptop Screen Display */
+.laptop-screen {
+  position: absolute;
+  width: 300px;
+  height: 180px;
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #ec4899 100%);
+  border-radius: 4px;
+  transform: translateZ(102px) translateY(-100px);
+  left: 50%;
+  margin-left: -150px;
+  bottom: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 0 30px rgba(124, 58, 237, 0.5),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Screen Content */
+.screen-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+}
+
+.screen-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.3;
+}
+
+.screen-chart {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 120px;
+  height: 80px;
+}
+
+.chart-line {
+  stroke: #fff;
+  stroke-width: 3;
+  fill: none;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+  animation: drawLine 3s ease-in-out infinite;
+}
+
+@keyframes drawLine {
+  0%, 100% {
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dashoffset: 10;
+  }
+}
+
+.screen-area {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  height: 60px;
+}
+
+.area-chart {
+  fill: url(#areaGradient);
+  opacity: 0.8;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Floating Elements */
+.floating-element {
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateZ(0px);
+  }
+  50% {
+    transform: translateY(-30px) translateZ(20px);
+  }
+}
+
+/* Donut Chart */
+.donut-chart {
+  top: 10%;
+  left: -15%;
+  animation-delay: 0s;
+}
+
+.donut {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #6366f1 0deg 120deg,
+    #a855f7 120deg 240deg,
+    #ec4899 240deg 360deg
+  );
+  box-shadow: 
+    0 10px 30px rgba(99, 102, 241, 0.4),
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
+  position: relative;
+  animation: rotate 8s linear infinite;
+}
+
+.donut::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: #0a1628;
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Bar Chart */
+.bar-chart {
+  bottom: 20%;
+  left: -10%;
+  animation-delay: 0.5s;
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 100px;
+  filter: drop-shadow(0 10px 20px rgba(236, 72, 153, 0.4));
+}
+
+.bar {
+  width: 20px;
+  background: linear-gradient(to top, #ec4899, #f9a8d4);
+  border-radius: 4px 4px 0 0;
+  animation: growBar 2s ease-in-out infinite;
+}
+
+.bar:nth-child(1) {
+  height: 40px;
+  animation-delay: 0s;
+}
+
+.bar:nth-child(2) {
+  height: 70px;
+  animation-delay: 0.2s;
+}
+
+.bar:nth-child(3) {
+  height: 50px;
+  animation-delay: 0.4s;
+}
+
+@keyframes growBar {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.2);
+  }
+}
+
+/* Data Cards */
+.data-card {
+  top: 15%;
+  right: -15%;
+  animation-delay: 1s;
+}
+
+.card {
+  width: 100px;
+  height: 140px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  box-shadow: 
+    0 15px 35px rgba(102, 126, 234, 0.4),
+    inset 0 2px 10px rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  animation: cardFloat 3s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+  0%, 100% {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  50% {
+    transform: rotateY(10deg) rotateX(5deg);
+  }
+}
+
+.card-icon {
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.card-line {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  margin: 6px 0;
+}
+
+.card-line:nth-child(2) {
+  width: 80%;
+}
+
+.card-line:nth-child(3) {
+  width: 60%;
+}
+
+/* List Element */
+.list-element {
+  bottom: 25%;
+  left: -5%;
+  animation-delay: 1.5s;
+}
+
+.list {
+  width: 80px;
+  padding: 10px;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  margin: 6px 0;
+}
+
+.list-dot {
+  width: 6px;
+  height: 6px;
+  background: #60a5fa;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.list-line {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+}
+
+/* Sphere */
+.sphere-element {
+  top: 25%;
+  right: -5%;
+  animation-delay: 2s;
+}
+
+.sphere {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at 30% 30%, #fbbf24, #f59e0b);
+  border-radius: 50%;
+  box-shadow: 
+    0 15px 40px rgba(251, 191, 36, 0.5),
+    inset -10px -10px 20px rgba(0, 0, 0, 0.2),
+    inset 10px 10px 20px rgba(255, 255, 255, 0.3);
+  animation: sphereBounce 2s ease-in-out infinite;
+}
+
+@keyframes sphereBounce {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .laptop-container {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .laptop-base,
+  .laptop-screen-back {
+    width: 280px;
+  }
+  
+  .laptop-screen {
+    width: 260px;
+  }
+  
+  .floating-element {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 768px) {
+  .laptop-3d-scene {
+    min-height: 400px;
+  }
+  
+  .laptop-container {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .laptop-base,
+  .laptop-screen-back {
+    width: 240px;
+  }
+  
+  .laptop-screen {
+    width: 220px;
+    height: 140px;
+  }
+  
+  .floating-element {
+    transform: scale(0.6);
+  }
+  
+  .donut-chart,
+  .bar-chart,
+  .list-element {
+    left: 5%;
+  }
+  
+  .data-card,
+  .sphere-element {
+    right: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .laptop-3d-scene {
+    min-height: 350px;
+  }
+  
+  .laptop-container {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .floating-element {
+    display: none;
+  }
+}

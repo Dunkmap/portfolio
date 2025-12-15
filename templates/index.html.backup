@@ -1,0 +1,1202 @@
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Data Strategy &amp; AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          },
+          colors: {
+            slate: {
+              850: '#0F172A', // Deep Navy
+              900: '#020617', // Darker
+            },
+            studio: {
+              gray: '#F4F4F5',
+              white: '#FFFFFF',
+              accent: '#18181B'
+            }
+          },
+          animation: {
+            'float': 'float 8s ease-in-out infinite',
+            'float-delayed': 'float 8s ease-in-out 4s infinite',
+            'fade-in': 'fadeIn 1s ease-out forwards',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #F8F8F8;
+      color: #18181B;
+    }
+
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .glass-dark {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .text-outline {
+      -webkit-text-stroke: 1px rgba(24, 24, 27, 0.2);
+      color: transparent;
+    }
+
+    .grid-bg {
+      background-size: 40px 40px;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    }
+
+    ::selection {
+      background-color: #18181B;
+      color: #ffffff;
+    }
+  </style>
+  <link id="all-fonts-link-font-geist" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-geist">
+    .font-geist {
+      font-family: 'Geist', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-roboto" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-roboto">
+    .font-roboto {
+      font-family: 'Roboto', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-montserrat" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-montserrat">
+    .font-montserrat {
+      font-family: 'Montserrat', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-poppins" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-poppins">
+    .font-poppins {
+      font-family: 'Poppins', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-playfair" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap">
+  <style id="all-fonts-style-font-playfair">
+    .font-playfair {
+      font-family: 'Playfair Display', serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-instrument-serif" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-instrument-serif">
+    .font-instrument-serif {
+      font-family: 'Instrument Serif', serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-merriweather" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap">
+  <style id="all-fonts-style-font-merriweather">
+    .font-merriweather {
+      font-family: 'Merriweather', serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-bricolage" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-bricolage">
+    .font-bricolage {
+      font-family: 'Bricolage Grotesque', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-jakarta" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap">
+  <style id="all-fonts-style-font-jakarta">
+    .font-jakarta {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-manrope" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap">
+  <style id="all-fonts-style-font-manrope">
+    .font-manrope {
+      font-family: 'Manrope', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-space-grotesk" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-space-grotesk">
+    .font-space-grotesk {
+      font-family: 'Space Grotesk', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-work-sans" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap">
+  <style id="all-fonts-style-font-work-sans">
+    .font-work-sans {
+      font-family: 'Work Sans', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-pt-serif" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap">
+  <style id="all-fonts-style-font-pt-serif">
+    .font-pt-serif {
+      font-family: 'PT Serif', serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-geist-mono" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-geist-mono">
+    .font-geist-mono {
+      font-family: 'Geist Mono', monospace !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-space-mono" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap">
+  <style id="all-fonts-style-font-space-mono">
+    .font-space-mono {
+      font-family: 'Space Mono', monospace !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-quicksand" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-quicksand">
+    .font-quicksand {
+      font-family: 'Quicksand', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-nunito" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap">
+  <style id="all-fonts-style-font-nunito">
+    .font-nunito {
+      font-family: 'Nunito', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-newsreader" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&amp;display=swap">
+  <style id="all-fonts-style-font-newsreader">
+    .font-newsreader {
+      font-family: 'Newsreader', serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-google-sans-flex" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-google-sans-flex">
+    .font-google-sans-flex {
+      font-family: 'Google Sans Flex', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-oswald" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-oswald">
+    .font-oswald {
+      font-family: 'Oswald', sans-serif !important;
+    }
+  </style>
+  <link id="all-fonts-link-font-dm-sans" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;display=swap">
+  <style id="all-fonts-style-font-dm-sans">
+    .font-dm-sans {
+      font-family: 'DM Sans', sans-serif !important;
+    }
+  </style>
+</head>
+
+<body class="antialiased font-sans selection:bg-black selection:text-white overflow-x-hidden">
+
+  <!-- Navigation -->
+  <nav
+    class="fixed top-0 w-full z-50 px-6 py-6 md:px-12 flex justify-between items-center mix-blend-exclusion text-white">
+
+    <div class="hidden md:flex gap-8 text-[11px] font-semibold tracking-[0.2em] uppercase">
+      <a href="#about" class="hover:opacity-50 transition-opacity">Expertise</a>
+      <a href="#projects" class="hover:opacity-50 transition-opacity">Selected Work</a>
+      <a href="#dashboards" class="hover:opacity-50 transition-opacity">Intelligence</a>
+      <a href="#contact" class="hover:opacity-50 transition-opacity">Contact</a>
+    </div>
+    <button class="md:hidden">
+      <iconify-icon icon="lucide:menu" width="24" stroke-width="1.5"></iconify-icon>
+    </button>
+  </nav>
+
+  <!-- Hero Section with Animated Dashboard -->
+  <header class="relative min-h-screen flex items-center px-6 md:px-12 overflow-hidden"
+    style="background: linear-gradient(135deg, #111827 0%, #4c1d95 50%, #581c87 100%);">
+
+    <!-- Floating Animated Icons with Cursor Interaction -->
+    <div class="absolute inset-0 overflow-hidden" id="floating-icons-container">
+      <div class="floating-icon interactive-icon" style="left: 10%; top: 20%; animation-delay: 0s;">
+        <iconify-icon icon="lucide:database" class="text-indigo-400 opacity-20" width="48"></iconify-icon>
+      </div>
+      <div class="floating-icon interactive-icon" style="left: 80%; top: 15%; animation-delay: 1.5s;">
+        <iconify-icon icon="lucide:bar-chart-2" class="text-purple-400 opacity-20" width="48"></iconify-icon>
+      </div>
+      <div class="floating-icon interactive-icon" style="left: 15%; top: 70%; animation-delay: 3s;">
+        <iconify-icon icon="lucide:pie-chart" class="text-pink-400 opacity-20" width="48"></iconify-icon>
+      </div>
+      <div class="floating-icon interactive-icon" style="left: 75%; top: 65%; animation-delay: 4.5s;">
+        <iconify-icon icon="lucide:line-chart" class="text-blue-400 opacity-20" width="48"></iconify-icon>
+      </div>
+      <div class="floating-icon interactive-icon" style="left: 50%; top: 10%; animation-delay: 6s;">
+        <iconify-icon icon="lucide:code" class="text-cyan-400 opacity-20" width="48"></iconify-icon>
+      </div>
+      <div class="floating-icon interactive-icon" style="left: 30%; top: 50%; animation-delay: 7.5s;">
+        <iconify-icon icon="lucide:zap" class="text-yellow-400 opacity-20" width="48"></iconify-icon>
+      </div>
+      <div class="floating-icon interactive-icon" style="left: 70%; top: 40%; animation-delay: 9s;">
+        <iconify-icon icon="lucide:cpu" class="text-green-400 opacity-20" width="48"></iconify-icon>
+      </div>
+      <div class="floating-icon interactive-icon" style="left: 40%; top: 80%; animation-delay: 10.5s;">
+        <iconify-icon icon="lucide:server" class="text-red-400 opacity-20" width="48"></iconify-icon>
+      </div>
+
+      <!-- Additional Icons -->
+      <div class="floating-icon interactive-icon" style="left: 25%; top: 30%; animation-delay: 2s;">
+        <iconify-icon icon="lucide:brain-circuit" class="text-violet-400 opacity-20" width="42"></iconify-icon>
+      </div>
+      <div class="floating-icon interactive-icon" style="left: 60%; top: 25%; animation-delay: 5s;">
+        <iconify-icon icon="lucide:chart-network" class="text-emerald-400 opacity-20" width="42"></iconify-icon>
+      </div>
+      <div class="floating-icon interactive-icon" style="left: 85%; top: 50%; animation-delay: 8s;">
+        <iconify-icon icon="lucide:git-branch" class="text-orange-400 opacity-20" width="42"></iconify-icon>
+      </div>
+      <div class="floating-icon interactive-icon" style="left: 5%; top: 45%; animation-delay: 11s;">
+        <iconify-icon icon="lucide:layers" class="text-teal-400 opacity-20" width="42"></iconify-icon>
+      </div>
+      <div class="floating-icon interactive-icon" style="left: 45%; top: 60%; animation-delay: 1s;">
+        <iconify-icon icon="lucide:workflow" class="text-fuchsia-400 opacity-20" width="42"></iconify-icon>
+      </div>
+      <div class="floating-icon interactive-icon" style="left: 90%; top: 80%; animation-delay: 4s;">
+        <iconify-icon icon="lucide:binary" class="text-lime-400 opacity-20" width="42"></iconify-icon>
+      </div>
+      <div class="floating-icon interactive-icon" style="left: 20%; top: 85%; animation-delay: 6.5s;">
+        <iconify-icon icon="lucide:cloud" class="text-sky-400 opacity-20" width="42"></iconify-icon>
+      </div>
+      <div class="floating-icon interactive-icon" style="left: 55%; top: 75%; animation-delay: 9.5s;">
+        <iconify-icon icon="lucide:sparkles" class="text-amber-400 opacity-20" width="42"></iconify-icon>
+      </div>
+      <div class="floating-icon interactive-icon" style="left: 35%; top: 15%; animation-delay: 3.5s;">
+        <iconify-icon icon="lucide:activity" class="text-rose-400 opacity-20" width="42"></iconify-icon>
+      </div>
+      <div class="floating-icon interactive-icon" style="left: 65%; top: 55%; animation-delay: 7s;">
+        <iconify-icon icon="lucide:trending-up" class="text-indigo-300 opacity-20" width="42"></iconify-icon>
+      </div>
+      <div class="floating-icon interactive-icon" style="left: 12%; top: 35%; animation-delay: 10s;">
+        <iconify-icon icon="lucide:boxes" class="text-purple-300 opacity-20" width="42"></iconify-icon>
+      </div>
+      <div class="floating-icon interactive-icon" style="left: 78%; top: 30%; animation-delay: 2.5s;">
+        <iconify-icon icon="lucide:globe" class="text-cyan-300 opacity-20" width="42"></iconify-icon>
+      </div>
+    </div>
+
+    <!-- Grid Pattern Overlay -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none"
+      style="background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 50px 50px;">
+    </div>
+
+    <div class="max-w-screen-2xl w-full mx-auto relative z-20 py-20">
+
+      <!-- Top Badge -->
+      <div class="text-center mb-12">
+        <div class="inline-block px-4 py-2 border-2 border-white/30 rounded-full bg-white/20 backdrop-blur-sm">
+          <span class="text-xs font-bold tracking-[0.2em] uppercase text-white flex items-center gap-2">
+            <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+            Available for hire
+          </span>
+        </div>
+      </div>
+
+      <!-- Main Dashboard Card -->
+      <div class="relative max-w-6xl mx-auto perspective-1000" style="perspective: 2000px;">
+        <div
+          class="bg-gradient-to-br from-slate-50 to-slate-100 rounded-[2rem] md:rounded-[3rem] p-6 md:p-16 shadow-[30px_30px_100px_rgba(0,0,0,0.4)] transform transition-all duration-700 hover:scale-[1.02]"
+          style="transform-style: preserve-3d;">
+
+          <!-- Name Badge -->
+          <div
+            class="inline-block mb-8 md:mb-12 px-8 py-4 bg-slate-800 text-white rounded-3xl font-black text-2xl md:text-3xl shadow-2xl">
+            Divya Raj
+          </div>
+
+          <!-- Dashboard Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+
+            <!-- Programming Languages Card -->
+            <div
+              class="bg-white rounded-3xl p-6 md:p-8 shadow-2xl border-4 border-slate-300 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition-all duration-500 transform hover:-translate-y-2 hover:rotate-1">
+              <h3 class="text-xl md:text-2xl font-black uppercase mb-8 text-slate-900 tracking-tight">Programming
+                Languages</h3>
+
+              <!-- Python Bar -->
+              <div class="mb-8">
+                <div class="flex justify-between items-center mb-3">
+                  <span class="font-black text-lg md:text-xl text-slate-800">Python</span>
+                  <span class="text-base md:text-lg font-black text-slate-700">80%</span>
+                </div>
+                <div class="h-10 md:h-12 bg-slate-200 rounded-full overflow-hidden shadow-inner relative">
+                  <div
+                    class="absolute inset-0 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 rounded-full shadow-2xl transition-all duration-1000 ease-out animate-pulse-slow"
+                    style="width: 80%; transform-origin: left;"></div>
+                </div>
+              </div>
+
+              <!-- SQL Bar -->
+              <div>
+                <div class="flex justify-between items-center mb-3">
+                  <span class="font-black text-lg md:text-xl text-slate-800">SQL</span>
+                  <span class="text-base md:text-lg font-black text-slate-700">85%</span>
+                </div>
+                <div class="h-10 md:h-12 bg-slate-200 rounded-full overflow-hidden shadow-inner relative">
+                  <div
+                    class="absolute inset-0 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-full shadow-2xl transition-all duration-1000 ease-out animate-pulse-slow"
+                    style="width: 85%; transform-origin: left; animation-delay: 0.2s;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tools Card with Pie Chart -->
+            <div
+              class="bg-white rounded-3xl p-6 md:p-8 shadow-2xl border-4 border-slate-300 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition-all duration-500 transform hover:-translate-y-2 hover:-rotate-1">
+              <h3 class="text-xl md:text-2xl font-black uppercase mb-8 text-slate-900 tracking-tight">Tools</h3>
+
+              <div class="flex items-center justify-center mb-6">
+                <!-- Pie Chart SVG -->
+                <svg viewBox="0 0 200 200"
+                  class="w-56 h-56 md:w-64 md:h-64 transform transition-transform duration-700 hover:rotate-[360deg] hover:scale-110">
+                  <!-- Power BI - 35% (Yellow) -->
+                  <circle cx="100" cy="100" r="80" fill="none" stroke="#FCD34D" stroke-width="80"
+                    stroke-dasharray="175.93 502.65" transform="rotate(-90 100 100)" class="drop-shadow-2xl" />
+
+                  <!-- Tableau - 20% (Red) -->
+                  <circle cx="100" cy="100" r="80" fill="none" stroke="#EF4444" stroke-width="80"
+                    stroke-dasharray="100.53 502.65" stroke-dashoffset="-175.93" transform="rotate(-90 100 100)"
+                    class="drop-shadow-2xl" />
+
+                  <!-- Excel - 25% (Cyan) -->
+                  <circle cx="100" cy="100" r="80" fill="none" stroke="#22D3EE" stroke-width="80"
+                    stroke-dasharray="125.66 502.65" stroke-dashoffset="-276.46" transform="rotate(-90 100 100)"
+                    class="drop-shadow-2xl" />
+
+                  <!-- AWS - 20% (Blue) -->
+                  <circle cx="100" cy="100" r="80" fill="none" stroke="#3B82F6" stroke-width="80"
+                    stroke-dasharray="100.53 502.65" stroke-dashoffset="-402.12" transform="rotate(-90 100 100)"
+                    class="drop-shadow-2xl" />
+
+                  <!-- Center circle -->
+                  <circle cx="100" cy="100" r="40" fill="white" class="drop-shadow-xl" />
+                </svg>
+              </div>
+
+              <!-- Legend -->
+              <div class="grid grid-cols-2 gap-3 text-sm md:text-base">
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded-full bg-yellow-400 shadow-lg"></div>
+                  <span class="font-bold">Power BI 35%</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded-full bg-red-500 shadow-lg"></div>
+                  <span class="font-bold">Tableau 20%</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded-full bg-cyan-400 shadow-lg"></div>
+                  <span class="font-bold">Excel 25%</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-4 h-4 rounded-full bg-blue-500 shadow-lg"></div>
+                  <span class="font-bold">AWS 20%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Analytical Skills Card -->
+            <div
+              class="bg-white rounded-3xl p-6 md:p-8 shadow-2xl border-4 border-slate-300 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition-all duration-500 transform hover:-translate-y-2 hover:-rotate-1">
+              <h3 class="text-xl md:text-2xl font-black uppercase mb-8 text-slate-900 tracking-tight">Analytical Skills
+              </h3>
+
+              <!-- Bar Chart -->
+              <div class="flex items-end justify-between h-48 md:h-56 gap-4">
+                <!-- Data Visualization -->
+                <div class="flex-1 flex flex-col items-center group">
+                  <div
+                    class="w-full bg-gradient-to-t from-yellow-400 via-yellow-500 to-yellow-300 rounded-t-2xl shadow-2xl transition-all duration-700 hover:scale-110 animate-bounce-slow"
+                    style="height: 78%;"></div>
+                  <span class="text-xs md:text-sm font-black mt-3 text-center leading-tight">Data<br>Viz</span>
+                  <span class="text-sm md:text-base font-black text-yellow-600 mt-1">78%</span>
+                </div>
+
+                <!-- Statistical Analysis -->
+                <div class="flex-1 flex flex-col items-center group">
+                  <div
+                    class="w-full bg-gradient-to-t from-yellow-500 via-yellow-600 to-yellow-400 rounded-t-2xl shadow-2xl transition-all duration-700 hover:scale-110 animate-bounce-slow"
+                    style="height: 80%; animation-delay: 0.1s;"></div>
+                  <span class="text-xs md:text-sm font-black mt-3 text-center leading-tight">Stats<br>D2S</span>
+                  <span class="text-sm md:text-base font-black text-yellow-600 mt-1">80%</span>
+                </div>
+
+                <!-- Power Apps -->
+                <div class="flex-1 flex flex-col items-center group">
+                  <div
+                    class="w-full bg-gradient-to-t from-yellow-600 via-yellow-700 to-yellow-500 rounded-t-2xl shadow-2xl transition-all duration-700 hover:scale-110 animate-bounce-slow"
+                    style="height: 85%; animation-delay: 0.2s;"></div>
+                  <span class="text-xs md:text-sm font-black mt-3 text-center leading-tight">PA<br>D2S</span>
+                  <span class="text-sm md:text-base font-black text-yellow-600 mt-1">85%</span>
+                </div>
+
+                <!-- Report Building -->
+                <div class="flex-1 flex flex-col items-center group">
+                  <div
+                    class="w-full bg-gradient-to-t from-blue-600 via-blue-700 to-blue-500 rounded-t-2xl shadow-2xl transition-all duration-700 hover:scale-110 animate-bounce-slow"
+                    style="height: 82%; animation-delay: 0.3s;"></div>
+                  <span class="text-xs md:text-sm font-black mt-3 text-center leading-tight">Report<br>Build</span>
+                  <span class="text-sm md:text-base font-black text-blue-600 mt-1">82%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Soft Skills Card -->
+            <div
+              class="bg-white rounded-3xl p-6 md:p-8 shadow-2xl border-4 border-slate-300 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition-all duration-500 transform hover:-translate-y-2 hover:rotate-1">
+              <h3 class="text-xl md:text-2xl font-black uppercase mb-8 text-slate-900 tracking-tight">Soft Skills</h3>
+
+              <ul class="space-y-5">
+                <li class="flex items-center gap-4 group cursor-default">
+                  <div class="w-4 h-4 bg-slate-900 rounded-full group-hover:scale-150 transition-transform shadow-lg">
+                  </div>
+                  <span
+                    class="font-bold text-base md:text-lg text-slate-800 group-hover:text-slate-900 group-hover:translate-x-2 transition-all">Communication</span>
+                </li>
+                <li class="flex items-center gap-4 group cursor-default">
+                  <div class="w-4 h-4 bg-slate-900 rounded-full group-hover:scale-150 transition-transform shadow-lg">
+                  </div>
+                  <span
+                    class="font-bold text-base md:text-lg text-slate-800 group-hover:text-slate-900 group-hover:translate-x-2 transition-all">Collaboration</span>
+                </li>
+                <li class="flex items-center gap-4 group cursor-default">
+                  <div class="w-4 h-4 bg-slate-900 rounded-full group-hover:scale-150 transition-transform shadow-lg">
+                  </div>
+                  <span
+                    class="font-bold text-base md:text-lg text-slate-800 group-hover:text-slate-900 group-hover:translate-x-2 transition-all">Leadership</span>
+                </li>
+                <li class="flex items-center gap-4 group cursor-default">
+                  <div class="w-4 h-4 bg-slate-900 rounded-full group-hover:scale-150 transition-transform shadow-lg">
+                  </div>
+                  <span
+                    class="font-bold text-base md:text-lg text-slate-800 group-hover:text-slate-900 group-hover:translate-x-2 transition-all">Problem-Solving</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Info -->
+      <div class="mt-16 flex flex-col md:flex-row gap-8 justify-center items-center text-white/80">
+        <div class="text-center">
+          <span class="block text-xs uppercase tracking-widest mb-2 text-white/60">Focus</span>
+          <span class="font-bold text-base text-white">Predictive Analytics</span>
+        </div>
+        <div class="hidden md:block w-px h-12 bg-white/30"></div>
+        <div class="text-center">
+          <span class="block text-xs uppercase tracking-widest mb-2 text-white/60">Stack</span>
+          <span class="font-bold text-base text-white">Python / SQL / BI</span>
+        </div>
+        <div class="hidden md:block w-px h-12 bg-white/30"></div>
+        <div class="animate-bounce text-white">
+          <iconify-icon icon="lucide:arrow-down" width="24"></iconify-icon>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <style>
+    @keyframes pulse-slow {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.8;
+      }
+    }
+
+    @keyframes bounce-slow {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes float-random {
+
+      0%,
+      100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+      }
+
+      25% {
+        transform: translate(30px, -30px) rotate(90deg) scale(1.2);
+      }
+
+      50% {
+        transform: translate(-20px, 40px) rotate(180deg) scale(0.8);
+      }
+
+      75% {
+        transform: translate(40px, 20px) rotate(270deg) scale(1.1);
+      }
+    }
+
+    .floating-icon {
+      position: absolute;
+      animation: float-random 30s ease-in-out infinite;
+    }
+
+    .interactive-icon {
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+      cursor: pointer;
+    }
+    
+    .card-3d {
+      transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+      will-change: transform;
+    }
+
+    .animate-pulse-slow {
+      animation: pulse-slow 3s ease-in-out infinite;
+    }
+
+    .animate-bounce-slow {
+      animation: bounce-slow 2s ease-in-out infinite;
+    }
+  </style>
+
+
+  <!-- About / Editorial Section with 3D Effects -->
+  <section id="about" class="py-32 px-6 md:px-12 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
+    <!-- Animated background elements -->
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute top-20 right-20 w-96 h-96 bg-indigo-500 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-20 left-20 w-96 h-96 bg-purple-500 rounded-full blur-3xl animate-pulse"
+        style="animation-delay: 1s;"></div>
+    </div>
+
+    <div class="max-w-screen-xl mx-auto relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+        <div class="md:col-span-4">
+          <h2 class="text-xs font-bold tracking-[0.2em] uppercase text-indigo-600 mb-4 sticky top-32">
+            Data-Driven Expertise
+          </h2>
+        </div>
+        <div class="md:col-span-8">
+          <p class="text-3xl md:text-5xl font-display font-medium leading-tight tracking-tight text-slate-900 mb-12">
+            I build systems that <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">listen to
+              data</span>.
+            By combining statistical rigor with design-thinking, I transform complex datasets into clear,
+            narrative-driven business intelligence.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-12">
+            <!-- Data Engineering Card -->
+            <div
+              class="card-3d group relative bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer border border-gray-200"
+              style="transform-style: preserve-3d; perspective: 1000px;">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+              </div>
+              <iconify-icon icon="lucide:database"
+                class="text-5xl mb-4 text-indigo-600 group-hover:scale-110 transition-transform duration-300"
+                stroke-width="1.5"></iconify-icon>
+              <h3 class="text-xl font-bold uppercase tracking-wider mb-3 text-slate-900">Data Engineering</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Building robust ETL pipelines, optimizing SQL queries, and architecting scalable data warehouses with
+                modern tools like dbt and Snowflake.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="text-xs px-2 py-1 bg-indigo-100 text-indigo-700 rounded-full">SQL</span>
+                <span class="text-xs px-2 py-1 bg-indigo-100 text-indigo-700 rounded-full">ETL</span>
+                <span class="text-xs px-2 py-1 bg-indigo-100 text-indigo-700 rounded-full">dbt</span>
+              </div>
+            </div>
+
+            <!-- AI / ML Card -->
+            <div
+              class="card-3d group relative bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer border border-gray-200"
+              style="transform-style: preserve-3d; perspective: 1000px;">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+              </div>
+              <iconify-icon icon="lucide:brain-circuit"
+                class="text-5xl mb-4 text-purple-600 group-hover:scale-110 transition-transform duration-300"
+                stroke-width="1.5"></iconify-icon>
+              <h3 class="text-xl font-bold uppercase tracking-wider mb-3 text-slate-900">AI / ML</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Developing predictive models, implementing RAG systems, and leveraging NLP for automated insights using
+                scikit-learn and modern ML frameworks.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="text-xs px-2 py-1 bg-purple-100 text-purple-700 rounded-full">Scikit-learn</span>
+                <span class="text-xs px-2 py-1 bg-purple-100 text-purple-700 rounded-full">NLP</span>
+                <span class="text-xs px-2 py-1 bg-purple-100 text-purple-700 rounded-full">RAG</span>
+              </div>
+            </div>
+
+            <!-- Analytics Card -->
+            <div
+              class="card-3d group relative bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer border border-gray-200"
+              style="transform-style: preserve-3d; perspective: 1000px;">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+              </div>
+              <iconify-icon icon="lucide:bar-chart-2"
+                class="text-5xl mb-4 text-blue-600 group-hover:scale-110 transition-transform duration-300"
+                stroke-width="1.5"></iconify-icon>
+              <h3 class="text-xl font-bold uppercase tracking-wider mb-3 text-slate-900">Analytics & BI</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Creating interactive dashboards in Tableau and Power BI, performing statistical analysis, and delivering
+                actionable insights from complex data.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded-full">Tableau</span>
+                <span class="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded-full">Power BI</span>
+                <span class="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded-full">Statistics</span>
+              </div>
+            </div>
+
+            <!-- Strategy Card -->
+            <div
+              class="card-3d group relative bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer border border-gray-200"
+              style="transform-style: preserve-3d; perspective: 1000px;">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+              </div>
+              <iconify-icon icon="lucide:target"
+                class="text-5xl mb-4 text-emerald-600 group-hover:scale-110 transition-transform duration-300"
+                stroke-width="1.5"></iconify-icon>
+              <h3 class="text-xl font-bold uppercase tracking-wider mb-3 text-slate-900">Data Strategy</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Defining KPIs, designing A/B tests, and translating business questions into data-driven solutions that
+                drive measurable growth.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="text-xs px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full">KPIs</span>
+                <span class="text-xs px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full">A/B Testing</span>
+                <span class="text-xs px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full">Growth</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dark Mode / Dashboards (Glassmorphism) -->
+  <section id="dashboards" class="py-32 px-6 md:px-12 bg-slate-900 text-white relative overflow-hidden">
+    <!-- Abstract gradient blobs -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
+      <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-600 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-purple-600 rounded-full blur-[120px]"></div>
+    </div>
+
+    <div class="max-w-screen-xl mx-auto relative z-10">
+      <div class="mb-20 flex flex-col md:flex-row justify-between items-end border-b border-slate-800 pb-8">
+        <div>
+          <span class="text-xs font-bold tracking-[0.2em] uppercase text-slate-500 mb-2 block">Intelligence Layer</span>
+          <h2 class="text-4xl md:text-6xl font-display font-medium tracking-tight">Analytics <br> Dashboards</h2>
+        </div>
+        <p class="md:max-w-sm text-slate-400 font-light text-sm mt-6 md:mt-0">
+          Transforming multi-source data into real-time, interactive decision support systems.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Dashboard Card 1 -->
+        <div class="glass-dark rounded-2xl p-8 hover:scale-[1.01] transition-transform duration-500">
+          <div class="flex justify-between items-start mb-8">
+            <div>
+              <h3 class="text-xl font-medium tracking-tight">Retail Performance Monitor</h3>
+              <span class="text-xs text-slate-400 uppercase tracking-wider mt-1 block">PowerBI • SQL Server</span>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+              <iconify-icon icon="lucide:maximize-2" width="14"></iconify-icon>
+            </div>
+          </div>
+
+          <!-- CSS Chart Simulation -->
+          <div class="space-y-6">
+            <div class="grid grid-cols-3 gap-4">
+              <div class="bg-white/5 rounded p-4 border border-white/5">
+                <div class="text-[10px] text-slate-400 uppercase">Revenue</div>
+                <div class="text-lg font-mono text-green-400 mt-1">$2.4M</div>
+                <div class="w-full bg-slate-700 h-1 mt-2 rounded-full">
+                  <div class="w-[70%] bg-green-400 h-full rounded-full"></div>
+                </div>
+              </div>
+              <div class="bg-white/5 rounded p-4 border border-white/5">
+                <div class="text-[10px] text-slate-400 uppercase">Conversion</div>
+                <div class="text-lg font-mono text-white mt-1">3.2%</div>
+                <div class="w-full bg-slate-700 h-1 mt-2 rounded-full">
+                  <div class="w-[45%] bg-white h-full rounded-full"></div>
+                </div>
+              </div>
+              <div class="bg-white/5 rounded p-4 border border-white/5">
+                <div class="text-[10px] text-slate-400 uppercase">Churn</div>
+                <div class="text-lg font-mono text-red-400 mt-1">0.8%</div>
+                <div class="w-full bg-slate-700 h-1 mt-2 rounded-full">
+                  <div class="w-[15%] bg-red-400 h-full rounded-full"></div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-32 bg-white/5 rounded border border-white/5 relative flex items-end justify-between px-4 pb-4 pt-8 gap-2">
+              <!-- Bars -->
+              <div class="w-full bg-blue-500/20 h-[30%] rounded-sm hover:bg-blue-500/40 transition-colors"></div>
+              <div class="w-full bg-blue-500/30 h-[50%] rounded-sm hover:bg-blue-500/50 transition-colors"></div>
+              <div class="w-full bg-blue-500/40 h-[40%] rounded-sm hover:bg-blue-500/60 transition-colors"></div>
+              <div class="w-full bg-blue-500/50 h-[70%] rounded-sm hover:bg-blue-500/70 transition-colors"></div>
+              <div class="w-full bg-blue-500/60 h-[55%] rounded-sm hover:bg-blue-500/80 transition-colors"></div>
+              <div class="w-full bg-blue-500 h-[85%] rounded-sm shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Card 2 -->
+        <div class="glass-dark rounded-2xl p-8 hover:scale-[1.01] transition-transform duration-500">
+          <div class="flex justify-between items-start mb-8">
+            <div>
+              <h3 class="text-xl font-medium tracking-tight">Logistics Network Flow</h3>
+              <span class="text-xs text-slate-400 uppercase tracking-wider mt-1 block">Tableau • Python</span>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+              <iconify-icon icon="lucide:maximize-2" width="14"></iconify-icon>
+            </div>
+          </div>
+
+          <div
+            class="relative h-full min-h-[180px] bg-slate-800/30 rounded-lg border border-white/5 p-4 overflow-hidden">
+            <!-- Abstract Map/Network viz -->
+            <div class="absolute inset-0 flex items-center justify-center opacity-30">
+              <div class="w-64 h-64 border border-slate-600 rounded-full flex items-center justify-center">
+                <div class="w-48 h-48 border border-slate-600 rounded-full flex items-center justify-center">
+                  <div class="w-32 h-32 border border-slate-500 rounded-full animate-pulse bg-slate-500/10"></div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute top-4 left-4 right-4 z-10">
+              <div class="flex items-center gap-3 mb-2">
+                <div class="h-2 w-2 rounded-full bg-green-500"></div>
+                <span class="text-[10px] uppercase tracking-widest text-slate-300">Route Efficiency: 94%</span>
+              </div>
+              <div class="h-1 w-full bg-slate-700 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-green-500 to-blue-500 w-[94%]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Timeline / Selected Works -->
+  <!-- SVG Defs for Flower Shape -->
+  <svg width="0" height="0" style="position: absolute; pointer-events: none;">
+    <defs>
+      <clipPath id="flower-clip" clipPathUnits="objectBoundingBox">
+        <path
+          d="M0.5,0 C0.55,0.2 0.7,0.2 0.8,0.1 C0.8,0.3 0.95,0.35 0.95,0.5 C0.85,0.55 0.85,0.7 0.9,0.8 C0.75,0.85 0.6,0.95 0.5,1 C0.4,0.95 0.25,0.85 0.1,0.8 C0.15,0.7 0.15,0.55 0.05,0.5 C0.05,0.35 0.2,0.3 0.2,0.1 C0.3,0.2 0.45,0.2 0.5,0 Z" />
+      </clipPath>
+    </defs>
+  </svg>
+
+  <section id="projects" class="py-32 px-4 md:px-12 bg-[#5B86E5] relative overflow-hidden font-display">
+    <!-- Playful Background Elements -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none"
+      style="background-image: radial-gradient(#fff 2px, transparent 2px); background-size: 30px 30px;">
+    </div>
+
+    <!-- Decorative Stars/Flowers -->
+    <div class="absolute top-10 left-10 text-[#FAEF5D] animate-spin-slow opacity-60 hidden md:block">
+      <iconify-icon icon="ph:star-four-fill" width="120"></iconify-icon>
+    </div>
+    <div class="absolute bottom-10 right-10 text-[#FF61A6] animate-bounce opacity-60 hidden md:block">
+      <iconify-icon icon="ph:flower-tulip-bold" width="100"></iconify-icon>
+    </div>
+
+    <div class="max-w-screen-xl mx-auto relative z-10">
+      <div class="text-center mb-24">
+        <h2
+          class="text-5xl md:text-7xl font-extrabold tracking-wider text-white select-none drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]"
+          style="-webkit-text-stroke: 2px black;">
+          PROJECT<br>TIMELINE
+        </h2>
+      </div>
+
+      <div class="relative">
+        <!-- Central Timeline Line -->
+        <div
+          class="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-3 bg-white border-2 border-black rounded-full hidden md:block">
+        </div>
+
+        <div class="space-y-32">
+          {% for p in projects %}
+          <!-- Project Item -->
+          <div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center group w-full">
+
+            <!-- Timeline Dot (Center) with Number -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 z-20 hidden md:flex items-center gap-4">
+              <!-- Yellow Dot -->
+              <div
+                class="w-8 h-8 bg-yellow-400 border-4 border-black rounded-full group-hover:scale-125 transition-transform shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+              </div>
+
+              <!-- Dynamic Color Cycle for Numbers -->
+              {% set colors = ['bg-[#FAEF5D]', 'bg-[#FF61A6]', 'bg-[#76F76F]', 'bg-[#A78BFA]'] %}
+              {% set color = colors[(loop.index0) % 4] %}
+
+              <!-- Compact Numeric Display -->
+              <div
+                class="w-16 h-16 {{ color }} rounded-full flex items-center justify-center border-4 border-black shadow-[4px_4px_0px_rgba(0,0,0,1)] transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-12">
+                <span class="text-3xl font-black text-black" style="-webkit-text-stroke: 2px black;">
+                  {{ '%02d' % loop.index }}
+                </span>
+              </div>
+            </div>
+
+            <!-- Content Side -->
+            <div
+              class="{{ 'md:order-1 md:text-right pr-0 md:pr-12' if loop.index % 2 != 0 else 'md:order-2 md:text-left pl-0 md:pl-12 order-2' }} relative z-10">
+              <div
+                class="bg-white border-4 border-black p-6 rounded-2xl shadow-[8px_8px_0px_rgba(0,0,0,1)] transform transition-transform duration-300 hover:-translate-y-2 relative">
+                <!-- Chat Bubble Tail simulation if needed, or keeping it simple card -->
+                <div
+                  class="inline-block bg-black text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-3">
+                  {{ p.tags.split('•')[0] if p.tags else 'Project' }}
+                </div>
+                <h3 class="text-2xl font-bold text-black mb-2">{{ p.title }}</h3>
+                <p class="text-sm font-medium text-slate-600 mb-4 leading-relaxed">
+                  {% for line in p.desc %}
+                  {{ line }}
+                  {% endfor %}
+                </p>
+                <a href="{{ p.link }}" target="_blank"
+                  class="inline-flex items-center text-sm font-black uppercase tracking-wide border-b-2 border-black hover:text-[#FF61A6] transition-colors">
+                  Check it out <iconify-icon icon="lucide:arrow-right" class="ml-1"></iconify-icon>
+                </a>
+              </div>
+            </div>
+
+            <!-- Empty placeholder for grid balance -->
+            <div class="{{ 'md:order-2' if loop.index % 2 != 0 else 'md:order-1 order-1' }}">
+            </div>
+
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!-- IMAGE MODAL / FLASHCARD -->
+    <div id="imageModal"
+      class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/80 backdrop-blur-sm opacity-0 transition-opacity duration-300"
+      onclick="closeModal()">
+      <div class="relative max-w-5xl w-full mx-4 transform scale-95 transition-transform duration-300" id="modalContent"
+        onclick="event.stopPropagation()">
+        <button onclick="closeModal()" class="absolute -top-12 right-0 text-white hover:text-red-400 transition-colors">
+          <iconify-icon icon="lucide:x" width="32"></iconify-icon>
+        </button>
+        <img id="modalImage" src="" alt="Full View"
+          class="w-full h-auto rounded-lg shadow-2xl border border-white/10 bg-transparent">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer / Contact -->
+  <footer id="contact" class="bg-slate-900 text-white px-6 md:px-12 pt-32 pb-12">
+    <div class="max-w-screen-xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
+        <div>
+          <h2 class="font-display text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-none">
+            READY TO <br> SCALE?
+          </h2>
+          <p class="text-slate-400 font-light text-lg max-w-md">
+            Currently available for freelance projects and consulting roles in data strategy and visualization.
+          </p>
+        </div>
+        <div class="flex flex-col justify-end">
+          <a href="mailto:hello@kathryn.io"
+            class="group flex items-center justify-between border-b border-slate-700 pb-8 hover:border-white transition-colors">
+            <span class="text-2xl md:text-3xl font-light">hello@portfolio.io</span>
+            <div
+              class="w-12 h-12 rounded-full border border-slate-700 flex items-center justify-center group-hover:bg-white group-hover:text-slate-900 transition-all">
+              <iconify-icon icon="lucide:arrow-up-right" width="20"></iconify-icon>
+            </div>
+          </a>
+          <div class="flex gap-8 mt-12">
+            <a href="#"
+              class="text-xs uppercase tracking-widest text-slate-500 hover:text-white transition-colors">LinkedIn</a>
+            <a href="#"
+              class="text-xs uppercase tracking-widest text-slate-500 hover:text-white transition-colors">GitHub</a>
+            <a href="#"
+              class="text-xs uppercase tracking-widest text-slate-500 hover:text-white transition-colors">Resume</a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-slate-800 text-[10px] text-slate-600 uppercase tracking-widest">
+        <span>© 2024 Data Portfolio</span>
+        <span class="mt-2 md:mt-0">Designed in Swiss Style</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Global "Scroll to Explore" Indicator (Fixed) -->
+  <div class="fixed bottom-8 right-8 mix-blend-difference z-50 pointer-events-none hidden md:block">
+    <div class="w-24 h-24 relative animate-spin-slow">
+      <svg viewBox="0 0 100 100" class="w-full h-full fill-white">
+        <path id="curve" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent"></path>
+        <text font-size="11" letter-spacing="2">
+          <textPath href="#curve">SCROLL TO EXPLORE • DATA •</textPath>
+        </text>
+      </svg>
+    </div>
+  </div>
+
+  <style>
+    .animate-spin-slow {
+      animation: spin 10s linear infinite;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Smooth transition for the tilt effect */
+    .tilt-flower {
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+  </style>
+
+  <script>
+    // 3D Tilt Effect for Project Flowers
+    const flowers = document.querySelectorAll('.tilt-flower');
+
+    flowers.forEach(flower => {
+      flower.addEventListener('mousemove', (e) => {
+        const rect = flower.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        // Calculate percentage position (0 to 1)
+        const yPercent = y / rect.height;
+
+        // Smooth rotation along X-axis only
+        // Mouse at top (yPercent = 0) -> tilt up (positive rotateX)
+        // Mouse at bottom (yPercent = 1) -> tilt down (negative rotateX)
+        const rotateX = (0.5 - yPercent) * 100; // Max 50 deg tilt up/down
+
+        flower.style.transform = `perspective(1000px) rotateX(${rotateX}deg) scale(1.15)`;
+      });
+
+      flower.addEventListener('mouseleave', () => {
+        // Reset smoothly
+        flower.style.transform = 'perspective(1000px) rotateX(0) scale(1)';
+      });
+    });
+
+    // Modal Logic
+    function openModal(imageSrc) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      const modalContent = document.getElementById('modalContent');
+
+      modalImg.src = imageSrc;
+      modal.classList.remove('hidden');
+
+      // Small timeout to allow display:block to apply before opacity transition
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modalContent.classList.remove('scale-95');
+        modalContent.classList.add('scale-100');
+      }, 10);
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('imageModal');
+      const modalContent = document.getElementById('modalContent');
+
+      modal.classList.add('opacity-0');
+      modalContent.classList.remove('scale-100');
+      modalContent.classList.add('scale-95');
+
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        document.getElementById('modalImage').src = '';
+      }, 300); // Wait for transition
+    }
+
+    // Close on escape key
+    document.addEventListener('keydown', function (event) {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    });
+  </script>
+  <script>
+    // 3D Tilt Effect for Cards
+    const cards3d = document.querySelectorAll('.card-3d');
+    
+    cards3d.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+      });
+    });
+    
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+    
+    // Scroll Animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.card-3d').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      observer.observe(card);
+    });
+  </script>
+
+
+  <script>
+    // Cursor interaction for floating icons
+    const container = document.getElementById('floating-icons-container');
+    const icons = document.querySelectorAll('.interactive-icon');
+
+    container.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      icons.forEach(icon => {
+        const rect = icon.getBoundingClientRect();
+        const iconX = rect.left + rect.width / 2;
+        const iconY = rect.top + rect.height / 2;
+
+        // Calculate distance from cursor
+        const deltaX = iconX - mouseX;
+        const deltaY = iconY - mouseY;
+        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+
+        // If cursor is within 150px, push icon away
+        if (distance < 150) {
+          const force = (150 - distance) / 150; // 0 to 1
+          const pushX = (deltaX / distance) * force * 80; // Push strength
+          const pushY = (deltaY / distance) * force * 80;
+
+          icon.style.transform = `translate(${pushX}px, ${pushY}px) scale(${1 + force * 0.3})`;
+          icon.style.opacity = 0.4 + force * 0.3;
+        } else {
+          // Smoothly return to original position
+          icon.style.transform = 'translate(0, 0) scale(1)';
+          icon.style.opacity = 0.2;
+        }
+      });
+    });
+
+    // Reset on mouse leave
+    container.addEventListener('mouseleave', () => {
+      icons.forEach(icon => {
+        icon.style.transform = 'translate(0, 0) scale(1)';
+        icon.style.opacity = 0.2;
+      });
+    });
+  </script>
+
+</body>
+
+
+</html>
+
