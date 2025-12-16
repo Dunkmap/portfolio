@@ -586,52 +586,83 @@
           </div>
         </div>
 
-        <!-- Experience Card 2 - Placeholder for second experience -->
-        <div
-          class="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 hover:border-emerald-200 overflow-hidden">
-          <!-- Decorative gradient -->
-          <div
-            class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500">
-          </div>
+        <!-- Experience Card 2 - Flip Card with Hidden Message -->
+        <div class="flip-card-container group relative">
+          <div class="flip-card">
+            <!-- Front of Card -->
+            <div class="flip-card-front bg-white rounded-2xl p-8 shadow-lg border border-slate-100 overflow-hidden">
+              <!-- Decorative gradient -->
+              <div
+                class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500">
+              </div>
 
-          <div class="relative z-10">
-            <!-- Company Icon -->
-            <div
-              class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <iconify-icon icon="lucide:code-2" class="text-3xl text-white"></iconify-icon>
+              <div class="relative z-10">
+                <!-- Company Icon -->
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <iconify-icon icon="lucide:code-2" class="text-3xl text-white"></iconify-icon>
+                </div>
+
+                <!-- Role & Company -->
+                <h4 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors">
+                  [Your Role]
+                </h4>
+                <p class="text-lg font-semibold text-emerald-600 mb-1">[Company Name]</p>
+                <p class="text-sm text-slate-500 mb-6">Duration: [Add dates]</p>
+
+                <!-- Responsibilities -->
+                <ul class="space-y-3 mb-6">
+                  <li class="flex items-start">
+                    <iconify-icon icon="lucide:check-circle"
+                      class="text-emerald-500 mt-1 mr-3 flex-shrink-0"></iconify-icon>
+                    <span class="text-slate-700">[Add your responsibility here]</span>
+                  </li>
+                  <li class="flex items-start">
+                    <iconify-icon icon="lucide:check-circle"
+                      class="text-emerald-500 mt-1 mr-3 flex-shrink-0"></iconify-icon>
+                    <span class="text-slate-700">[Add your responsibility here]</span>
+                  </li>
+                  <li class="flex items-start">
+                    <iconify-icon icon="lucide:check-circle"
+                      class="text-emerald-500 mt-1 mr-3 flex-shrink-0"></iconify-icon>
+                    <span class="text-slate-700">[Add your responsibility here]</span>
+                  </li>
+                </ul>
+
+                <!-- Skills Tags -->
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full">Python</span>
+                  <span class="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-semibold rounded-full">SQL</span>
+                  <span class="px-3 py-1 bg-cyan-50 text-cyan-700 text-xs font-semibold rounded-full">Data Viz</span>
+                </div>
+              </div>
             </div>
 
-            <!-- Role & Company -->
-            <h4 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors">
-              [Your Role]
-            </h4>
-            <p class="text-lg font-semibold text-emerald-600 mb-1">[Company Name]</p>
-            <p class="text-sm text-slate-500 mb-6">Duration: [Add dates]</p>
+            <!-- Back of Card -->
+            <div
+              class="flip-card-back bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-8 shadow-lg border-4 border-emerald-700 overflow-hidden">
+              <div class="relative z-10 h-full flex items-center justify-center">
+                <div class="text-center">
+                  <!-- Playful Icon -->
+                  <div class="mb-6 animate-bounce">
+                    <iconify-icon icon="lucide:eye" class="text-6xl text-white"></iconify-icon>
+                  </div>
 
-            <!-- Responsibilities -->
-            <ul class="space-y-3 mb-6">
-              <li class="flex items-start">
-                <iconify-icon icon="lucide:check-circle"
-                  class="text-emerald-500 mt-1 mr-3 flex-shrink-0"></iconify-icon>
-                <span class="text-slate-700">[Add your responsibility here]</span>
-              </li>
-              <li class="flex items-start">
-                <iconify-icon icon="lucide:check-circle"
-                  class="text-emerald-500 mt-1 mr-3 flex-shrink-0"></iconify-icon>
-                <span class="text-slate-700">[Add your responsibility here]</span>
-              </li>
-              <li class="flex items-start">
-                <iconify-icon icon="lucide:check-circle"
-                  class="text-emerald-500 mt-1 mr-3 flex-shrink-0"></iconify-icon>
-                <span class="text-slate-700">[Add your responsibility here]</span>
-              </li>
-            </ul>
+                  <!-- Hidden Message -->
+                  <p class="text-white text-xl md:text-2xl font-bold leading-relaxed px-4">
+                    Oh, look at you snooping around! Nothing here yet… but maybe your company's name will fit nicely
+                    soon.
+                  </p>
 
-            <!-- Skills Tags -->
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full">Python</span>
-              <span class="px-3 py-1 bg-teal-50 text-teal-700 text-xs font-semibold rounded-full">SQL</span>
-              <span class="px-3 py-1 bg-cyan-50 text-cyan-700 text-xs font-semibold rounded-full">Data Viz</span>
+                  <!-- Decorative elements -->
+                  <div class="mt-8 flex justify-center gap-2">
+                    <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                    <div class="w-2 h-2 bg-white rounded-full animate-pulse" style="animation-delay: 0.2s;"></div>
+                    <div class="w-2 h-2 bg-white rounded-full animate-pulse" style="animation-delay: 0.4s;"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -666,7 +697,7 @@
               class="text-xs uppercase tracking-widest text-slate-500 hover:text-white transition-colors">LinkedIn</a>
             <a href="https://github.com/Dunkmap/Fraud-detection-Using-M.L.git" target="_blank"
               class="text-xs uppercase tracking-widest text-slate-500 hover:text-white transition-colors">GitHub</a>
-            <a href="Divya Data Analyst Resume.pdf" target="_blank"
+            <a href="/resume"
               class="text-xs uppercase tracking-widest text-slate-500 hover:text-white transition-colors">Resume</a>
           </div>
         </div>

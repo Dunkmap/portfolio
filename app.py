@@ -118,7 +118,10 @@ def index():
 
 @app.route("/resume")
 def resume():
-    return send_from_directory(".", "Divya_Data_Analyst_Resume.pdf")
+    return send_from_directory(
+        ".", 
+        "Divya Data Analyst Resume.pdf"
+    )
 
 @app.route("/contact", methods=["POST"])
 def contact():

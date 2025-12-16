@@ -1,7 +1,8 @@
 // Experience Cards Scroll Animation
 class ExperienceAnimations {
     constructor() {
-        this.cards = document.querySelectorAll('#experience .group');
+        // Select only regular experience cards, not the flip card
+        this.cards = document.querySelectorAll('#experience .group:not(.flip-card-container)');
         if (this.cards.length === 0) return;
 
         this.init();
