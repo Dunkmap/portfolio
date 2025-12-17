@@ -100,7 +100,7 @@ PROJECTS = [
             "Performed customer segmentation using K-means clustering.",
             "Analyzed purchasing patterns and customer behavior.",
             "Created targeted marketing strategies based on segments.",
-            "Visualized clusters with interactive plots.",
+            "Visualized clusters with interactive plots.", 
             "Improved customer retention insights."
         ],
         "link": "#"

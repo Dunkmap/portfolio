@@ -1,0 +1,354 @@
+/* Main Projects Card Container */
+.projects-main-card {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border: 4px solid #1e293b;
+    border-radius: 20px;
+    padding: 2rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05),
+        8px 8px 0px rgba(0, 0, 0, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.projects-main-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+}
+
+.projects-main-card:hover::before {
+    left: 100%;
+}
+
+.projects-main-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04),
+        12px 12px 0px rgba(0, 0, 0, 1);
+}
+
+.projects-main-card.expanded {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+/* Main Card Header */
+.projects-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.projects-card-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.projects-card-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 3px solid #ffffff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.projects-main-card:hover .projects-card-icon {
+    transform: rotate(12deg) scale(1.1);
+}
+
+.projects-card-title h3 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 0;
+}
+
+.projects-card-count {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    backdrop-filter: blur(10px);
+}
+
+.projects-card-arrow {
+    font-size: 1.5rem;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.projects-main-card.expanded .projects-card-arrow {
+    transform: rotate(180deg);
+}
+
+/* Expandable Content */
+.projects-expandable-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
+}
+
+.projects-main-card.expanded .projects-expandable-content {
+    max-height: 1200px;
+}
+
+/* Horizontal Scrollable Envelope-Style Project Cards */
+.project-envelope-container {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 2rem 0 1rem 0;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 1rem;
+    position: relative;
+}
+
+/* Hide scrollbar but keep functionality */
+.project-envelope-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.project-envelope-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.project-envelope-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    border-radius: 10px;
+}
+
+.project-envelope-card {
+    min-width: 280px;
+    max-width: 280px;
+    height: 200px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+.project-envelope-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* Scroll Navigation Arrows */
+.envelope-scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    border: 3px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: 900;
+}
+
+.envelope-scroll-arrow:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 1);
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+}
+
+.envelope-scroll-arrow.left {
+    left: -20px;
+}
+
+.envelope-scroll-arrow.right {
+    right: -20px;
+}
+
+.envelope-scroll-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+}
+
+
+/* Envelope Background */
+.envelope-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 3px solid #1e293b;
+    border-radius: 16px;
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06),
+        8px 8px 0px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.project-envelope-card:hover .envelope-bg {
+    box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05),
+        12px 12px 0px rgba(0, 0, 0, 0.9);
+}
+
+/* Envelope Flap - Top Triangle */
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(99, 102, 241, 0.1) 0%, transparent 100%);
+    clip-path: polygon(0 0, 100% 0, 50% 50%);
+    border-bottom: 2px solid #e2e8f0;
+    transition: all 0.4s ease;
+}
+
+.project-envelope-card:hover .envelope-flap {
+    background: linear-gradient(180deg, rgba(139, 92, 246, 0.15) 0%, transparent 100%);
+}
+
+/* Project Image */
+.envelope-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #cbd5e1;
+    transition: all 0.4s ease;
+    z-index: 2;
+}
+
+.project-envelope-card:hover .envelope-image {
+    width: 85%;
+    height: 65%;
+    border-color: #6366f1;
+}
+
+/* Project Title */
+.envelope-title {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #1e293b;
+    padding: 0 12px;
+    z-index: 3;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+.project-envelope-card:hover .envelope-title {
+    color: #6366f1;
+    transform: scale(1.05);
+}
+
+/* Decorative Corner Stamp */
+.envelope-stamp {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    border: 2px solid #1e293b;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 900;
+    color: #1e293b;
+    z-index: 4;
+    transition: all 0.3s ease;
+}
+
+.project-envelope-card:hover .envelope-stamp {
+    transform: rotate(12deg) scale(1.1);
+}
+
+/* Glow effect on hover */
+.project-envelope-card::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899, #f59e0b);
+    border-radius: 18px;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease;
+    filter: blur(12px);
+}
+
+.project-envelope-card:hover::before {
+    opacity: 0.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .projects-card-title h3 {
+        font-size: 1.25rem;
+    }
+
+    .projects-card-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+
+    .project-envelope-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-envelope-card {
+        height: 180px;
+    }
+
+    .envelope-title {
+        font-size: 0.75rem;
+    }
+
+    .envelope-stamp {
+        width: 28px;
+        height: 28px;
+        font-size: 0.65rem;
+    }
+}

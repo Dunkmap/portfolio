@@ -1,12 +1,10 @@
-// Infinite Scroll within Fixed Timeline Container
+// Manual Scroll for Project Timeline
+// Auto-scrolling has been disabled - users can now manually scroll to view projects
+
 class ProjectTimelineScroll {
     constructor() {
         this.container = document.querySelector('.timeline-scroll-container');
         this.projectsWrapper = document.querySelector('.timeline-projects');
-        this.scrollSpeed = 1.5; // Smooth speed
-        this.isPaused = false;
-        this.scrollPosition = 0;
-        this.animationFrame = null;
 
         if (!this.container || !this.projectsWrapper) return;
 
@@ -14,67 +12,46 @@ class ProjectTimelineScroll {
     }
 
     init() {
-        // Clone projects for seamless infinite loop
-        this.cloneProjects();
+        // Enable manual scrolling by adding overflow-y-auto to container
+        this.container.style.overflowY = 'auto';
+        this.container.style.scrollBehavior = 'smooth';
 
-        // Start auto-scroll
-        this.startAutoScroll();
+        // Remove any transform that might have been applied
+        this.projectsWrapper.style.transform = 'none';
 
-        // Pause on hover
-        this.setupHoverPause();
+        // Add custom scrollbar styling
+        this.addScrollbarStyles();
     }
 
-    cloneProjects() {
-        // Get all original projects
-        const originalProjects = Array.from(this.projectsWrapper.children);
+    addScrollbarStyles() {
+        // Check if style element already exists
+        if (document.getElementById('timeline-scrollbar-styles')) return;
 
-        // Clone and append for seamless loop
-        originalProjects.forEach(project => {
-            const clone = project.cloneNode(true);
-            this.projectsWrapper.appendChild(clone);
-        });
-
-        // Store height for loop calculation
-        this.singleSetHeight = originalProjects.reduce((total, project) => {
-            return total + project.offsetHeight + 128; // 128 = space-y-32 (8rem)
-        }, 0);
-    }
-
-    startAutoScroll() {
-        const scroll = () => {
-            if (!this.isPaused) {
-                this.scrollPosition += this.scrollSpeed;
-
-                // Loop back when first set of projects scrolls out
-                if (this.scrollPosition >= this.singleSetHeight) {
-                    this.scrollPosition = 0;
-                }
-
-                // Apply smooth scroll
-                this.projectsWrapper.style.transform = `translateY(-${this.scrollPosition}px)`;
+        const style = document.createElement('style');
+        style.id = 'timeline-scrollbar-styles';
+        style.textContent = `
+            .timeline-scroll-container::-webkit-scrollbar {
+                width: 10px;
             }
-
-            this.animationFrame = requestAnimationFrame(scroll);
-        };
-
-        this.animationFrame = requestAnimationFrame(scroll);
-    }
-
-    setupHoverPause() {
-        // Pause on container hover
-        this.container.addEventListener('mouseenter', () => {
-            this.isPaused = true;
-        });
-
-        this.container.addEventListener('mouseleave', () => {
-            this.isPaused = false;
-        });
-    }
-
-    stop() {
-        if (this.animationFrame) {
-            cancelAnimationFrame(this.animationFrame);
-        }
+            
+            .timeline-scroll-container::-webkit-scrollbar-track {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 10px;
+            }
+            
+            .timeline-scroll-container::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 10px;
+                border: 2px solid transparent;
+                background-clip: padding-box;
+            }
+            
+            .timeline-scroll-container::-webkit-scrollbar-thumb:hover {
+                background: rgba(255, 255, 255, 0.5);
+                background-clip: padding-box;
+            }
+        `;
+        document.head.appendChild(style);
     }
 }
 
